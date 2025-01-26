@@ -10,6 +10,9 @@ import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
 import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU, REGISTRATION } from "../../constants/routeConstants";
 import { CART } from "../../constants/urlConstants";
 import "./NavBar.scss";
+import cristal from "../../img/Crystals1.jpg";
+
+
 
 const NavBar: FC = (): ReactElement => {
     const dispatch = useDispatch();
@@ -24,7 +27,7 @@ const NavBar: FC = (): ReactElement => {
     return (
         <>
             <div className={"navbar-logo-wrapper"}>
-                <img alt={"navbar-logo"} src="https://i.ibb.co/fqYvrL8/LOGO4.jpg" />
+                <img alt={"navbar-logo"} src={cristal} />
             </div>
             <Affix>
                 <div className={"navbar-wrapper"}>
@@ -32,13 +35,13 @@ const NavBar: FC = (): ReactElement => {
                         <Col span={12}>
                             <ul>
                                 <Link to={BASE}>
-                                    <li>HOME</li>
+                                    <li>Начало</li>
                                 </Link>
                                 <li>
-                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>PERFUMES</Link>
+                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали</Link>
                                 </li>
                                 <Link to={CONTACTS}>
-                                    <li>CONTACTS</li>
+                                    <li>Контакти</li>
                                 </Link>
                             </ul>
                         </Col>
@@ -56,13 +59,13 @@ const NavBar: FC = (): ReactElement => {
                                         <Link to={ACCOUNT}>
                                             <li>
                                                 <UserOutlined />
-                                                MY ACCOUNT
+                                                Акаунт
                                             </li>
                                         </Link>
                                         <Link id={"handleLogout"} to={BASE} onClick={handleLogout}>
                                             <li>
                                                 <LogoutOutlined />
-                                                EXIT
+                                                Изход
                                             </li>
                                         </Link>
                                     </>
@@ -72,14 +75,14 @@ const NavBar: FC = (): ReactElement => {
                                             <li>
                                                 <Space align={"baseline"}>
                                                     <LoginOutlined />
-                                                    SIGN IN
+                                                    Влизане
                                                 </Space>
                                             </li>
                                         </Link>
                                         <Link to={REGISTRATION}>
                                             <li>
                                                 <UserAddOutlined />
-                                                SIGN UP
+                                               Регистрация
                                             </li>
                                         </Link>
                                     </>

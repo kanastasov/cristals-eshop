@@ -53,7 +53,7 @@ const Account: FC = (): ReactElement => {
         <ContentWrapper>
             <Row gutter={32}>
                 <Col span={5}>
-                    <ContentTitle title={"My Account"} titleLevel={4} icon={<UserOutlined />} />
+                    <ContentTitle title={"Акаунт"} titleLevel={4} icon={<UserOutlined />} />
                     <AccountLink link={ACCOUNT_USER_INFO} title={"Personal data"} />
                     {isAdmin ? (
                         <>
