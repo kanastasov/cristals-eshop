@@ -9,7 +9,7 @@ const Footer: FC = (): ReactElement => {
         <div className={"footer-wrapper"}>
             <Row >
                 <Col span={12}>
-                    <Typography.Title level={3}>Дени Кристали</Typography.Title>
+                    <Typography.Title level={3}>Дени Кристали, Минерали и Сувенири</Typography.Title>
                     <Typography.Text>(+359) 877393133</Typography.Text>
                     <Typography.Text className={"mt-12"}>От 08:00 до 20:00 без Неделя.</Typography.Text>
                 </Col>

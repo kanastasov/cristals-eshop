@@ -16,7 +16,7 @@ describe("NavBar", () => {
     it("should render correctly", () => {
         const wrapper = mountWithStore(<NavBar />);
         expect(wrapper.text().includes("Начало")).toBe(true);
-        expect(wrapper.text().includes("Кристали")).toBe(true);
+        expect(wrapper.text().includes("Кристали, Минерали и Сувенири")).toBe(true);
         expect(wrapper.text().includes("Контакти")).toBe(true);
         expect(wrapper.text().includes("Вход")).toBe(true);
         expect(wrapper.text().includes("Регистрация")).toBe(true);

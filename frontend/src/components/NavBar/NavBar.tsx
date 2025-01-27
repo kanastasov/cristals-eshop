@@ -38,7 +38,7 @@ const NavBar: FC = (): ReactElement => {
                                     <li>Начало</li>
                                 </Link>
                                 <li>
-                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали</Link>
+                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали, Минерали и Сувенири</Link>
                                 </li>
                                 <Link to={CONTACTS}>
                                     <li>Контакти</li>

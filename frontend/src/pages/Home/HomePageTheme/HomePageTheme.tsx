@@ -27,3 +27,4 @@ const HomePageTheme: FC = (): ReactElement => {
 };
 
 export default HomePageTheme;
+
