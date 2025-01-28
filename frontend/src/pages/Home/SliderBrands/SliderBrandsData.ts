@@ -11,27 +11,29 @@ import cristal8 from "../../../img/Crystals8.jpg";
 export type BrandType = {
     name: string;
     url: string;
+    description: string
 };
 
 export const brandsItem: Array<BrandType> = [
-    { name: "Кристали", url: cristal },
-    { name: "Минерали", url: cristal2 },
-    { name: "Сувенири", url: cristal3 },
+    { name: "Кристали", url: cristal, description: "Необработени Скъпоценни и Полускъпоценни Камън" },
 
-    { name: "Кристали", url: cristal4 },
-    { name: "Минерали", url: cristal5 },
-    { name: "Сувенири", url: cristal6 },
+    { name: "Минерали", url: cristal2, description: "Полирани Камъни" },
+    { name: "Сувенири", url: cristal3, description: "Минерали и Кристали от България" },
 
-    { name: "Кристали", url: cristal7 },
-    { name: "Минерали", url: cristal8 },
+    { name: "Кристали", url: cristal4, description: "Друзи и Геоди" },
+    { name: "Минерали", url: cristal5, description: "Шипове и Обелиски" },
+    { name: "Сувенири", url: cristal6, description: " Сфери и Яйца" },
+
+    { name: "Кристали", url: cristal7, description: "Сърца" },
+    { name: "Минерали", url: cristal8, description: "Дланни Камъни" },
 
     
-    { name: "Кристали", url: cristal4 },
-    { name: "Минерали", url: cristal5 },
-    { name: "Сувенири", url: cristal6 },
+    { name: "Кристали", url: cristal4, description: "Кристални Черепи" },
+    { name: "Минерали", url: cristal5, description: "Плочки" },
+    { name: "Сувенири", url: cristal6, description: "Радиестезични Махала" },
 
-    { name: "Кристали", url: cristal7 },
-    { name: "Минерали", url: cristal8 },
+    { name: "Кристали", url: cristal7, description: "Пирамиди" },
+    { name: "Минерали", url: cristal8, description: "За Дома и Офиса" },
     
     // { name: "Tom Ford", url: "https://i.ibb.co/s9MpxnG/o-139.jpg" },
     // { name: "Prada", url: "https://i.ibb.co/2Y5Lsvy/o-143.jpg" },
