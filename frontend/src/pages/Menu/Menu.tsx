@@ -122,7 +122,7 @@ const Menu: FC = (): ReactElement => {
     return (
         <Layout>
             <Layout.Content className={"login-content"}>
-                <Typography.Title level={2}>Perfumes</Typography.Title>
+                <Typography.Title level={2}>Кристали, Минерали и Сувенири</Typography.Title>
                 <Row gutter={32}>
                     <Col span={6}>
                         <MenuCheckboxSection
@@ -133,13 +133,13 @@ const Menu: FC = (): ReactElement => {
                             selectedValues={filterParams.perfumers}
                         />
                         <MenuCheckboxSection
-                            title={"Gender"}
+                            title={"Пол"}
                             onChange={onChangeCheckbox}
                             data={gender}
                             category={CheckboxCategoryFilter.GENDERS}
                             selectedValues={filterParams.genders}
                         />
-                        <MenuRadioSection title={"Price"} onChange={onChangeRadio} data={price} />
+                        <MenuRadioSection title={"Цена"} onChange={onChangeRadio} data={price} />
                     </Col>
                     <Col span={18}>
                         <Row>
