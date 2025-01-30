@@ -4,19 +4,20 @@ import { Link } from "react-router-dom";
 
 import { PRODUCT } from "../../../constants/routeConstants";
 import "./CarouselImageSlider.css";
-import cristal3 from "../../../img/Crystals7.jpg";
-import cristal2 from "../../../img/Crystals8.jpg";
+import cristal7 from "../../../img/Crystals7.jpg";
+import cristal8 from "../../../img/Crystals8.jpg";
 
 export const sliderItems = [
-    {
-        id: "85",
-        name: "Photo 1",
-        url: cristal2
-    },
+
     {
         id: "46",
         name: "Photo 2",
-        url: cristal3
+        url: cristal7
+    },
+        {
+        id: "85",
+        name: "Photo 1",
+        url: cristal8
     }
 ];
 

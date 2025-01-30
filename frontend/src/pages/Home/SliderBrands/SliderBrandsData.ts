@@ -1,12 +1,39 @@
+import cristal from "../../../img/Crystals1.jpg";
+import cristal2 from "../../../img/Crystals2.jpg";
+import cristal3 from "../../../img/Crystals3.jpg";
+import cristal4 from "../../../img/Crystals4.jpg";
+import cristal5 from "../../../img/Crystals5.jpg";
+import cristal6 from "../../../img/Crystals6.jpg";
+import cristal7 from "../../../img/Crystals7.jpg";
+import cristal8 from "../../../img/Crystals8.jpg";
+
+
 export type BrandType = {
     name: string;
     url: string;
+    description: string
 };
 
 export const brandsItem: Array<BrandType> = [
-    //  { name: "Кристали", url: "https://i.ibb.co/s9MpxnG/o-139.jpg" },
-    // { name: "Минерали", url: "https://i.ibb.co/2Y5Lsvy/o-143.jpg" },
-    // { name: "Сувенири", url: "https://i.ibb.co/wCkG15S/o-160.jpg" },
+    { name: "Кристали", url: cristal, description: "Необработени Скъпоценни и Полускъпоценни Камън" },
+
+    { name: "Минерали", url: cristal2, description: "Полирани Камъни" },
+    { name: "Сувенири", url: cristal3, description: "Минерали и Кристали от България" },
+
+    { name: "Кристали", url: cristal4, description: "Друзи и Геоди" },
+    { name: "Минерали", url: cristal5, description: "Шипове и Обелиски" },
+    { name: "Сувенири", url: cristal6, description: " Сфери и Яйца" },
+
+    { name: "Кристали", url: cristal7, description: "Сърца" },
+    { name: "Минерали", url: cristal8, description: "Дланни Камъни" },
+
+    
+    { name: "Кристали", url: cristal4, description: "Кристални Черепи" },
+    { name: "Минерали", url: cristal5, description: "Плочки" },
+    { name: "Сувенири", url: cristal6, description: "Радиестезични Махала" },
+
+    { name: "Кристали", url: cristal7, description: "Пирамиди" },
+    { name: "Минерали", url: cristal8, description: "За Дома и Офиса" },
     
     // { name: "Tom Ford", url: "https://i.ibb.co/s9MpxnG/o-139.jpg" },
     // { name: "Prada", url: "https://i.ibb.co/2Y5Lsvy/o-143.jpg" },

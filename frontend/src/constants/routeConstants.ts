@@ -5,6 +5,13 @@ export const FORGOT = "/forgot";
 export const RESET = "/reset";
 export const ACTIVATE = "/activate";
 export const MENU = "/menu";
+export const MENU_MINERALS = "/menu-minerals";
+export const MENU_ONYX = "/menu-oxyx";
+export const MENU_JEWELRY = "/menu-jewelry";
+export const MENU_SOUVENIR = "/menu-souvenir";
+export const MENU_WITCHCRAFT = "/menu-witchcraft";
+
+
 export const PRODUCT = "/product";
 export const CONTACTS = "/contacts";
 export const CART = "/cart";

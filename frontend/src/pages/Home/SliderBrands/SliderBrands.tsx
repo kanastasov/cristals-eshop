@@ -12,6 +12,7 @@ const SliderBrands: FC = (): ReactElement => {
                 Видове Кристали, Минерали и Сувенири
             </Typography.Title>
             <Carousel className={"brands-carousel"} autoplay>
+               
                 <SliderBrandsItem brands={brandsItem.slice(0, 6)} />
                 <SliderBrandsItem brands={brandsItem.slice(6, 12)} />
                 <SliderBrandsItem brands={brandsItem.slice(12, 18)} />

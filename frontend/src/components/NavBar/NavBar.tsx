@@ -7,12 +7,10 @@ import { Affix, Badge, Col, Row, Space } from "antd";
 import { selectUserFromUserState } from "../../redux-toolkit/user/user-selector";
 import { selectCartItemsCount } from "../../redux-toolkit/cart/cart-selector";
 import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
-import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU, REGISTRATION } from "../../constants/routeConstants";
+import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU,MENU_MINERALS, MENU_ONYX, MENU_JEWELRY, MENU_SOUVENIR,MENU_WITCHCRAFT, REGISTRATION } from "../../constants/routeConstants";
 import { CART } from "../../constants/urlConstants";
 import "./NavBar.scss";
 import cristal from "../../img/Crystals1.jpg";
-
-
 
 const NavBar: FC = (): ReactElement => {
     const dispatch = useDispatch();
@@ -32,13 +30,28 @@ const NavBar: FC = (): ReactElement => {
             <Affix>
                 <div className={"navbar-wrapper"}>
                     <Row style={{ padding: "0px 400px" }}>
-                        <Col span={12}>
+                        <Col span={7}>
                             <ul>
                                 <Link to={BASE}>
                                     <li>Начало</li>
                                 </Link>
                                 <li>
-                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали, Минерали и Сувенири</Link>
+                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали</Link>
+                                </li>
+                                <li>
+                                    <Link to={{ pathname: MENU_MINERALS, state: { id: "all" } }}> Минерали</Link>
+                                </li>
+                                  <li>
+                                    <Link to={{ pathname: MENU_ONYX, state: { id: "all" } }}> Оникс</Link>
+                                </li>
+                                  <li>
+                                    <Link to={{ pathname: MENU_JEWELRY, state: { id: "all" } }}> Бижута</Link>
+                                </li>
+                                  <li>
+                                    <Link to={{ pathname: MENU_SOUVENIR, state: { id: "all" } }}> Сувенири</Link>
+                                </li>
+                                  <li>
+                                    <Link to={{ pathname: MENU_WITCHCRAFT, state: { id: "all" } }}> Вещерски неща</Link>
                                 </li>
                                 <Link to={CONTACTS}>
                                     <li>Контакти</li>
