@@ -9,6 +9,16 @@ export interface PerfumeResponse {
     volume: string;
 }
 
+export interface CrystalResponse {
+    id: number;
+    crystalTitle: string;
+    price: number;
+    crystalRating: number;
+    filename: string;
+    reviewsCount: number;
+    quantity: string;
+}
+
 export interface FullPerfumeResponse extends PerfumeResponse {
     year: number;
     country: string;
@@ -20,6 +30,19 @@ export interface FullPerfumeResponse extends PerfumeResponse {
     type: string;
     file: any;
 }
+
+export interface FullCrystalResponse extends CrystalResponse {
+    year: number;
+    country: string;
+    crystalGender: string;
+    fragranceTopNotes: string;
+    fragranceMiddleNotes: string;
+    fragranceBaseNotes: string;
+    description: string;
+    type: string;
+    file: any;
+}
+
 
 export interface HeaderResponse<T> {
     items: Array<T>;

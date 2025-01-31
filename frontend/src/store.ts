@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import perfumesSlice, { PerfumesState } from "./redux-toolkit/perfumes/perfumes-slice";
-import perfumeSlice, { PerfumeState } from "./redux-toolkit/perfume/perfume-slice";
+import perfumesSlice, { crystalsSlice, CrystalsState, PerfumesState } from "./redux-toolkit/perfumes/perfumes-slice";
+import perfumeSlice, { crystalSlice, CrystalState, PerfumeState } from "./redux-toolkit/perfume/perfume-slice";
 import userSlice, { UserState } from "./redux-toolkit/user/user-slice";
 import ordersSlice, { OrdersState } from "./redux-toolkit/orders/orders-slice";
 import orderSlice, { OrderState } from "./redux-toolkit/order/order-slice";
@@ -18,6 +18,8 @@ export interface RootState {
     perfume: PerfumeState;
     perfumes: PerfumesState;
     user: UserState;
+    crystal: CrystalState;
+    crystals: CrystalsState;
 }
 
 export const storeReducer = {
@@ -29,6 +31,8 @@ export const storeReducer = {
     perfume: perfumeSlice,
     perfumes: perfumesSlice,
     user: userSlice,
+    crystal: crystalSlice,
+    crystals: crystalsSlice,
 };
 
 export const store = configureStore({
