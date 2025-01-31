@@ -1,1 +1,0 @@
-INSERT INTO crystals (crystals_title, country, crystals_gender, description, filename, price, quantity, crystals_rating) VALUES ('Кристал 1', 'България', 'male', 'Уникален кристал', 'https://perfumeweb2.s3.eu-central-1.amazonaws.com/17d6f8a1-aa84-4823-bd18-ccb0fdbe7fe9.Hugo Boss Hugo Man.jpg', 399.99, 4, 0);

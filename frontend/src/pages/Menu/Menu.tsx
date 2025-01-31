@@ -5,7 +5,7 @@ import { CheckboxValueType } from "antd/lib/checkbox/Group";
 import { useLocation } from "react-router-dom";
 
 import MenuCheckboxSection from "./MenuSection/MenuCheckboxSection";
-import { selectIsPerfumesLoading, selectPerfumes } from "../../redux-toolkit/perfumes/perfumes-selector";
+import {  selectIsPerfumesLoading, selectPerfumes } from "../../redux-toolkit/perfumes/perfumes-selector";
 import { FilterParamsType } from "../../types/types";
 import { fetchPerfumesByFilterParams, fetchPerfumesByInputText } from "../../redux-toolkit/perfumes/perfumes-thunks";
 import { resetPerfumesState } from "../../redux-toolkit/perfumes/perfumes-slice";
@@ -19,6 +19,7 @@ import { MAX_PAGE_VALUE, usePagination } from "../../hooks/usePagination";
 import { gender, perfumer, price } from "./MenuData";
 import { useSearch } from "../../hooks/useSearch";
 import "./Menu.css";
+import { selectCrystals } from "../../redux-toolkit/crystals/crystals-selector";
 
 export enum CheckboxCategoryFilter {
     PERFUMERS = "PERFUMERS",
@@ -28,6 +29,11 @@ export enum CheckboxCategoryFilter {
 const Menu: FC = (): ReactElement => {
     const dispatch = useDispatch();
     const perfumes = useSelector(selectPerfumes);
+
+    const crystals = useSelector(selectCrystals);
+    console.log(crystals)
+
+
     const isPerfumesLoading = useSelector(selectIsPerfumesLoading);
     const location = useLocation<{ id: string }>();
     const [filterParams, setFilterParams] = useState<FilterParamsType>({
@@ -38,6 +44,8 @@ const Menu: FC = (): ReactElement => {
     const [sortByPrice, setSortByPrice] = useState<boolean>(false);
     const { currentPage, totalElements, handleChangePagination, resetPagination } = usePagination();
     const { searchValue, searchTypeValue, resetFields, form, onSearch, handleChangeSelect } = useSearch();
+
+
 
     useEffect(() => {
         const perfumeData = location.state.id;
@@ -122,7 +130,7 @@ const Menu: FC = (): ReactElement => {
     return (
         <Layout>
             <Layout.Content className={"login-content"}>
-                <Typography.Title level={2}>Кристали, Минерали и Сувенири</Typography.Title>
+                <Typography.Title level={2}>Кристали</Typography.Title>
                 <Row gutter={32}>
                     <Col span={6}>
                         <MenuCheckboxSection

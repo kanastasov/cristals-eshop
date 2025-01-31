@@ -3,7 +3,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import RequestService from "../../utils/request-service";
 import {
     CRYSTALS,
-    PERFUMES,
     PERFUMES_GRAPHQL_IDS,
     PERFUMES_GRAPHQL_PERFUMES,
     PERFUMES_IDS,
@@ -13,17 +12,6 @@ import {
 import { CrystalResponse, FilterParamsType, HeaderResponse, PerfumeResponse, PerfumesSearchRequest } from "../../types/types";
 import { gePerfumesByIdsQuery, getAllPerfumesByQuery } from "../../utils/graphql-query/perfume-query";
 
-export const fetchPerfumes = createAsyncThunk<HeaderResponse<PerfumeResponse>, number>(
-    "perfumes/fetchPerfumes",
-    async (page) => {
-        const response = await RequestService.get(`${PERFUMES}?page=${page}`);
-        return {
-            items: response.data,
-            pagesCount: parseInt(response.headers["page-total-count"]),
-            totalElements: parseInt(response.headers["page-total-elements"])
-        };
-    }
-);
 
 
 export const fetchCrystals = createAsyncThunk<HeaderResponse<CrystalResponse>, number>(

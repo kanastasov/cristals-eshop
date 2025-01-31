@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { LoadingStatus, PerfumeResponse } from "../../types/types";
+import { CrystalResponse, LoadingStatus, PerfumeResponse } from "../../types/types";
 import {
+    fetchCrystals,
     fetchPerfumes,
     fetchPerfumesByFilterParams,
     fetchPerfumesByIds,
@@ -17,12 +18,14 @@ export interface PerfumesState {
     loadingState: LoadingStatus;
 }
 
+
 export const initialState: PerfumesState = {
     perfumes: [],
     pagesCount: 1,
     totalElements: 0,
-    loadingState: LoadingStatus.LOADING
-};
+    loadingState: LoadingStatus.LOADING,
+}
+
 
 export const perfumesSlice = createSlice({
     name: "perfumes",
@@ -89,6 +92,8 @@ export const perfumesSlice = createSlice({
         });
     }
 });
+
+
 
 export const { setPerfumes, removePerfumeById, resetPerfumesState } = perfumesSlice.actions;
 export default perfumesSlice.reducer;
