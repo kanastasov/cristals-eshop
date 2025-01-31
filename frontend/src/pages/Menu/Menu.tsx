@@ -5,7 +5,7 @@ import { CheckboxValueType } from "antd/lib/checkbox/Group";
 import { useLocation } from "react-router-dom";
 
 import MenuCheckboxSection from "./MenuSection/MenuCheckboxSection";
-import { selectCrystals, selectIsPerfumesLoading, selectPerfumes } from "../../redux-toolkit/perfumes/perfumes-selector";
+import {  selectIsPerfumesLoading, selectPerfumes } from "../../redux-toolkit/perfumes/perfumes-selector";
 import { FilterParamsType } from "../../types/types";
 import { fetchPerfumesByFilterParams, fetchPerfumesByInputText } from "../../redux-toolkit/perfumes/perfumes-thunks";
 import { resetPerfumesState } from "../../redux-toolkit/perfumes/perfumes-slice";
@@ -19,6 +19,7 @@ import { MAX_PAGE_VALUE, usePagination } from "../../hooks/usePagination";
 import { gender, perfumer, price } from "./MenuData";
 import { useSearch } from "../../hooks/useSearch";
 import "./Menu.css";
+import { selectCrystals } from "../../redux-toolkit/crystals/crystals-selector";
 
 export enum CheckboxCategoryFilter {
     PERFUMERS = "PERFUMERS",

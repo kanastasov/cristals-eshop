@@ -32,12 +32,12 @@ export interface FullPerfumeResponse extends PerfumeResponse {
 }
 
 export interface FullCrystalResponse extends CrystalResponse {
-    year: number;
-    country: string;
-    crystalGender: string;
-    fragranceTopNotes: string;
-    fragranceMiddleNotes: string;
-    fragranceBaseNotes: string;
+    crystalTitle: string;
+    price: number;
+    crystalRating: number;
+    filename: string;
+    reviewsCount: number;
+    quantity: string;
     description: string;
     type: string;
     file: any;
