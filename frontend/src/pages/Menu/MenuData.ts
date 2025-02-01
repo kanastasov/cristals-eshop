@@ -28,7 +28,6 @@ export const crystalData: Array<{ name: string }> = [
     { name: "Бижута" },
     { name: "Сувенири" },
     { name: "Вещерски неща" },
-    // ,    { name: "Carolina Herrera" }
 ];
 
 export const gender: Array<{ name: string }> = [{ name: "male" }, { name: "female" }];
