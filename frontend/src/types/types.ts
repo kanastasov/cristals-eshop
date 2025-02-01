@@ -209,6 +209,15 @@ export interface FilterParamsType {
     sortByPrice?: boolean;
 }
 
+
+export interface FilterParamsTypeCrystals {
+    crystals: Array<string>;
+    genders: Array<string>;
+    prices: Array<number>;
+    currentPage?: number;
+    sortByPrice?: boolean;
+}
+
 export interface PerfumePrice {
     id: number;
     name: string;

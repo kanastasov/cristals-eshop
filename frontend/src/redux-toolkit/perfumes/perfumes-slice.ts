@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { CrystalResponse, LoadingStatus, PerfumeResponse } from "../../types/types";
+import {  LoadingStatus, PerfumeResponse } from "../../types/types";
 import {
-    fetchCrystals,
     fetchPerfumes,
     fetchPerfumesByFilterParams,
     fetchPerfumesByIds,

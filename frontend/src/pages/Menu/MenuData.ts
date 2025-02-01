@@ -21,10 +21,13 @@ import { PerfumePrice } from "../../types/types";
 //     { name: "Versace" }
 // ];
 
-export const perfumer: Array<{ name: string }> = [
+export const crystalData: Array<{ name: string }> = [
     { name: "Кристали" },
     { name: "Минерали" },
-    { name: "Сувенири" }
+    { name: "Оникс" },
+    { name: "Бижута" },
+    { name: "Сувенири" },
+    { name: "Вещерски неща" },
     // ,    { name: "Carolina Herrera" }
 ];
 

@@ -49,5 +49,7 @@ export const PERFUMES_SEARCH_TEXT = "/perfumes/search/text";
 export const PERFUMES_GRAPHQL_PERFUME = "/perfumes/graphql/perfume";
 export const CRYSTALS_GRAPHQL_CRYSTAL = "/crystals/graphql/crystal";
 
+export const Crystals_SEARCH = "/crystals/search";
+
 export const PERFUMES_GRAPHQL_PERFUMES = "/perfumes/graphql/perfumes";
 export const PERFUMES_GRAPHQL_IDS = "/perfumes/graphql/ids";
