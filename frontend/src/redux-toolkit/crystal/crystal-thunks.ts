@@ -11,6 +11,8 @@ export const fetchCristal = createAsyncThunk<Partial<FullCrystalResponse>, strin
     async (crystalId, thunkApi) => {
         try {
             const response = await RequestService.get(`${CRYSTALS}/${crystalId}`);
+          console.log(response.data)
+
             return response.data;
         } catch (error) {
             return thunkApi.rejectWithValue(error.response.data);

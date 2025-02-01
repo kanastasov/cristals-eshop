@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { FullCrystalResponse, FullPerfumeResponse, LoadingStatus, ReviewResponse } from "../../types/types";
-import { fetchCristal, fetchCristalByQuery, fetchPerfume, fetchPerfumeByQuery, fetchReviewsByPerfumeId } from "./perfume-thunks";
+import { FullPerfumeResponse, LoadingStatus, ReviewResponse } from "../../types/types";
+import {  fetchPerfume, fetchPerfumeByQuery, fetchReviewsByPerfumeId } from "./perfume-thunks";
 
 export interface PerfumeState {
     perfume: Partial<FullPerfumeResponse>;

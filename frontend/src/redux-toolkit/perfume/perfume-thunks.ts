@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import RequestService from "../../utils/request-service";
-import {CRYSTALS, CRYSTALS_GRAPHQL_CRYSTAL, PERFUMES, PERFUMES_GRAPHQL_PERFUME, REVIEW} from "../../constants/urlConstants";
+import {  PERFUMES, PERFUMES_GRAPHQL_PERFUME, REVIEW} from "../../constants/urlConstants";
 import { getPerfumeByQuery } from "../../utils/graphql-query/perfume-query";
-import { FullCrystalResponse, FullPerfumeResponse, ReviewResponse } from "../../types/types";
+import {  FullPerfumeResponse, ReviewResponse } from "../../types/types";
 
 export const fetchPerfume = createAsyncThunk<Partial<FullPerfumeResponse>, string, { rejectValue: string }>(
     "perfume/fetchPerfume",
@@ -18,18 +18,6 @@ export const fetchPerfume = createAsyncThunk<Partial<FullPerfumeResponse>, strin
 );
 
 
-
-export const fetchCristal = createAsyncThunk<Partial<FullCrystalResponse>, string, { rejectValue: string }>(
-    "crystal/fetchCrystal",
-    async (crystalId, thunkApi) => {
-        try {
-            const response = await RequestService.get(`${CRYSTALS}/${crystalId}`);
-            return response.data;
-        } catch (error) {
-            return thunkApi.rejectWithValue(error.response.data);
-        }
-    }
-);
 export const fetchReviewsByPerfumeId = createAsyncThunk<Array<ReviewResponse>, string>(
     "perfume/fetchReviewsByPerfumeId",
     async (perfumeId) => {
@@ -53,20 +41,7 @@ export const fetchPerfumeByQuery = createAsyncThunk<Partial<FullPerfumeResponse>
     }
 );
 
-// GraphQL thunks
-export const fetchCristalByQuery = createAsyncThunk<Partial<FullCrystalResponse>, string, { rejectValue: string }>(
-    "crystal/fetchCrystalByQuery",
-    async (crystalId, thunkApi) => {
-        try {
-            const response = await RequestService.post(CRYSTALS_GRAPHQL_CRYSTAL, {
-                query: getPerfumeByQuery(crystalId)
-            });
-            return response.data.data.perfume;
-        } catch (error) {
-            return thunkApi.rejectWithValue(error.response.data);
-        }
-    }
-);
+
 
 
 

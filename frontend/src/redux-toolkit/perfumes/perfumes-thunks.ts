@@ -10,7 +10,7 @@ import {
     PERFUMES_SEARCH,
     PERFUMES_SEARCH_TEXT
 } from "../../constants/urlConstants";
-import { CrystalResponse, FilterParamsType, HeaderResponse, PerfumeResponse, PerfumesSearchRequest } from "../../types/types";
+import { FilterParamsType, HeaderResponse, PerfumeResponse, PerfumesSearchRequest } from "../../types/types";
 import { gePerfumesByIdsQuery, getAllPerfumesByQuery } from "../../utils/graphql-query/perfume-query";
 
 export const fetchPerfumes = createAsyncThunk<HeaderResponse<PerfumeResponse>, number>(
@@ -25,18 +25,6 @@ export const fetchPerfumes = createAsyncThunk<HeaderResponse<PerfumeResponse>, n
     }
 );
 
-
-export const fetchCrystals = createAsyncThunk<HeaderResponse<CrystalResponse>, number>(
-    "crystals/fetchCrystals",
-    async (page) => {
-        const response = await RequestService.get(`${CRYSTALS}?page=${page}`);
-        return {
-            items: response.data,
-            pagesCount: parseInt(response.headers["page-total-count"]),
-            totalElements: parseInt(response.headers["page-total-elements"])
-        };
-    }
-);
 
 
 export const fetchPerfumesByIds = createAsyncThunk<Array<PerfumeResponse>, Array<number>>(

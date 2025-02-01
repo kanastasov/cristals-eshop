@@ -13,7 +13,7 @@ import java.util.Objects;
 @ToString
 @Entity
 @Table(name = "crystals")
-public class Crystals {
+public class Crystal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,7 +52,7 @@ public class Crystals {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Crystals crystals = (Crystals) o;
+        Crystal crystals = (Crystal) o;
         return Objects.equals(id, crystals.id);
     }
 

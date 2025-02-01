@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CrystalResponse, LoadingStatus } from "../../types/types";
 import {
     fetchCrystals,
-    fetchPerfumesByFilterParams,
     fetchPerfumesByIds,
     fetchPerfumesByIdsQuery,
     fetchPerfumesByInputText,
@@ -94,5 +93,5 @@ export const crystalsSlice = createSlice({
     }
 });
 
-export const { setCrystals,removeCrystalById } = crystalsSlice.actions;
+export const { setCrystals,removeCrystalById,resetCrystalsState } = crystalsSlice.actions;
 export default crystalsSlice.reducer;
