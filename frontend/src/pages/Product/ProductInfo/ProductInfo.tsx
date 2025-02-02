@@ -37,7 +37,7 @@ const ProductInfo: FC<PropsType> = ({ perfume, reviewsLength, addToCart }): Reac
                 <Row style={{ marginTop: 16 }}>
                     <Col span={5}>
                         <Space align={"baseline"}>
-                            <Typography.Text>${perfume?.price}.00</Typography.Text>
+                            <Typography.Text>{perfume?.price}.00 лева</Typography.Text>
                         </Space>
                     </Col>
                     <Col span={4}>
