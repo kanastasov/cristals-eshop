@@ -74,16 +74,21 @@ const EditPerfume: FC = (): ReactElement => {
     const onFormSubmit = (data: EditPerfumeData): void => {
         const bodyFormData: FormData = new FormData();
         // @ts-ignore
+          
+
         bodyFormData.append("file", { file });
         bodyFormData.append(
             "perfume",
             new Blob([JSON.stringify({ ...data, id: perfumeData?.id })], { type: "application/json" })
         );
+            console.log(file);
+            console.log(data);
 
         dispatch(updatePerfume(bodyFormData));
     };
 
     const handleUpload = ({ file }: UploadChangeParam<any>): void => {
+        console.log(file)
         setFile(file);
     };
 

@@ -42,6 +42,9 @@ public class AdminController {
     public ResponseEntity<FullPerfumeResponse> addPerfume(@RequestPart(name = "file", required = false) MultipartFile file,
                                                           @RequestPart("perfume") @Valid PerfumeRequest perfume,
                                                           BindingResult bindingResult) {
+    	
+    	perfume.setType("Eau de Parfum");
+    	perfume.setPerfumeGender("male");
         return ResponseEntity.ok(perfumeMapper.savePerfume(perfume, file, bindingResult));
     }
 

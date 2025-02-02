@@ -38,6 +38,10 @@ const AddPerfume: FC = (): ReactElement => {
     const perfumeErrors = useSelector(selectAdminStateErrors);
     const [file, setFile] = React.useState<string>("");
 
+    const [perfumeGender, setPerfumeGender] = React.useState<string>("male");
+    const [type, setType] = React.useState<string>("Eau de Parfum");
+
+
     useEffect(() => {
         dispatch(setAdminLoadingState(LoadingStatus.LOADED));
 
@@ -58,6 +62,8 @@ const AddPerfume: FC = (): ReactElement => {
     }, [isPerfumeAdded]);
 
     const onFormSubmit = (data: AddPerfumeData): void => {
+        data.perfumeGender = ('male');
+        data.type = ('Eau de Parfum');
         const bodyFormData: FormData = new FormData();
         // @ts-ignore
         bodyFormData.append("file", { file });
@@ -65,6 +71,8 @@ const AddPerfume: FC = (): ReactElement => {
             "perfume",
             new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
         );
+        console.log(file)
+        console.log(data)
 
         dispatch(addPerfume(bodyFormData));
     };

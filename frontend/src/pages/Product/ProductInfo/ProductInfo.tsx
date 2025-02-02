@@ -32,7 +32,7 @@ const ProductInfo: FC<PropsType> = ({ perfume, reviewsLength, addToCart }): Reac
                     </Col>
                 </Row>
                 <Row>
-                    <Typography.Text type="success">In Stock</Typography.Text>
+                    <Typography.Text type="success">Наличен</Typography.Text>
                 </Row>
                 <Row style={{ marginTop: 16 }}>
                     <Col span={5}>
@@ -42,20 +42,20 @@ const ProductInfo: FC<PropsType> = ({ perfume, reviewsLength, addToCart }): Reac
                     </Col>
                     <Col span={4}>
                         <Button icon={<ShoppingCartOutlined />} onClick={addToCart}>
-                            Add to cart
+                            Добави в кошницата
                         </Button>
                     </Col>
                 </Row>
                 <Divider />
                 <Row>
                     <Col span={8}>
-                        <Description title={"Gender:"} />
-                        <Description title={"Volume:"} />
-                        <Description title={"Release year:"} />
-                        <Description title={"Manufacturer country:"} />
-                        <Description title={"Top notes:"} />
-                        <Description title={"Heart notes:"} />
-                        <Description title={"Base notes:"} />
+                        <Description title={"Пол:"} />
+                        <Description title={"Грамаж"} />
+                        <Description title={"Година"} />
+                        <Description title={"Страна"} />
+                        <Description title={"Горни записки:"} />
+                        <Description title={"Средни записки: "} />
+                        <Description title={"Основни записки:"} />
                     </Col>
                     <Col span={16}>
                         <Description title={perfume?.perfumeGender} />

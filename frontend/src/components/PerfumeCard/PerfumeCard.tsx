@@ -43,7 +43,7 @@ const PerfumeCard: FC<PropsType> = ({ perfume, colSpan, edit, onOpenDelete }): R
                               ]
                             : [
                                   <Button icon={<ShoppingCartOutlined />} onClick={onClickAddToCart}>
-                                      Add to cart
+                                      Добави в кошницата
                                   </Button>
                               ]
                     }
