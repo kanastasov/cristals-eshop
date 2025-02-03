@@ -38,6 +38,10 @@ const AddPerfume: FC = (): ReactElement => {
     const perfumeErrors = useSelector(selectAdminStateErrors);
     const [file, setFile] = React.useState<string>("");
 
+    const [perfumeGender, setPerfumeGender] = React.useState<string>("male");
+    const [type, setType] = React.useState<string>("Eau de Parfum");
+
+
     useEffect(() => {
         dispatch(setAdminLoadingState(LoadingStatus.LOADED));
 
@@ -58,6 +62,12 @@ const AddPerfume: FC = (): ReactElement => {
     }, [isPerfumeAdded]);
 
     const onFormSubmit = (data: AddPerfumeData): void => {
+        data.perfumeGender = ('male');
+        data.type = ('Eau de Parfum');
+        data.fragranceTopNotes = ('fragranceTopNotes');
+        data.fragranceBaseNotes = ('fragranceBaseNotes');
+    
+                    
         const bodyFormData: FormData = new FormData();
         // @ts-ignore
         bodyFormData.append("file", { file });
@@ -65,6 +75,8 @@ const AddPerfume: FC = (): ReactElement => {
             "perfume",
             new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
         );
+        console.log(file)
+        console.log(data)
 
         dispatch(addPerfume(bodyFormData));
     };
@@ -75,61 +87,53 @@ const AddPerfume: FC = (): ReactElement => {
 
     return (
         <>
-            <ContentTitle title={"Добави продукт"} titleLevel={4} icon={<PlusSquareOutlined />} />
+            <ContentTitle title={"Добави Продукт"} titleLevel={4} icon={<PlusSquareOutlined />} />
             <Form onFinish={onFormSubmit}>
                 <Row gutter={32}>
                     <Col span={12}>
                         <AddFormInput
-                            title={"Продукт"}
+                            title={"Име на продукта"}
                             name={"perfumeTitle"}
                             error={perfumeErrors.perfumeTitleError}
-                            placeholder={"Добави продукт"}
+                            placeholder={"Име на продукта"}
                             disabled={ispPerfumeLoading}
                         />
                         <AddFormInput
                             title={"Година"}
                             name={"year"}
                             error={perfumeErrors.yearError}
-                            placeholder={"Добави Година"}
+                            placeholder={"Година"}
                             disabled={ispPerfumeLoading}
                         />
-                    
-                        <AddFormSelect
-                            title={"Gender"}
-                            name={"perfumeGender"}
-                            error={perfumeErrors.perfumeGenderError}
-                            placeholder={"male"}
-                            disabled={ispPerfumeLoading}
-                            values={["male", "female"]}
-                        />
+                   
                         <AddFormInput
-                            title={"Допълнителна информация"}
+                            title={"Описание"}
                             name={"fragranceMiddleNotes"}
                             error={perfumeErrors.fragranceMiddleNotesError}
-                            placeholder={"Добави Допълнителна информация"}
+                            placeholder={"Описание"}
                             disabled={ispPerfumeLoading}
                         />
                         <AddFormInput
                             title={"Цена"}
                             name={"price"}
                             error={perfumeErrors.priceError}
-                            placeholder={"Добави цена"}
+                            placeholder={"Цена"}
                             disabled={ispPerfumeLoading}
                         />
                     </Col>
                     <Col span={12}>
                         <AddFormInput
-                            title={"Категория"}
+                            title={"Тип Продукт"}
                             name={"perfumer"}
                             error={perfumeErrors.perfumerError}
-                            placeholder={"Добави категория(Кристал, Минерал..)"}
+                            placeholder={"Тип Продукт(Кристали, Минерали..)"}
                             disabled={ispPerfumeLoading}
                         />
                         <AddFormInput
-                            title={"Страна"}
+                            title={"Страна пройзход"}
                             name={"country"}
                             error={perfumeErrors.countryError}
-                            placeholder={"Страна"}
+                            placeholder={"Страна пройзход"}
                             disabled={ispPerfumeLoading}
                         />
                         <AddFormInput
@@ -139,20 +143,7 @@ const AddPerfume: FC = (): ReactElement => {
                             placeholder={"Количество"}
                             disabled={ispPerfumeLoading}
                         />
-                        {/* <AddFormInput
-                            title={"забележки"}
-                            name={"fragranceTopNotes"}
-                            error={perfumeErrors.fragranceTopNotesError}
-                            placeholder={"забележки"}
-                            disabled={ispPerfumeLoading}
-                        />
-                        <AddFormInput
-                            title={"Base notes"}
-                            name={"fragranceBaseNotes"}
-                            error={perfumeErrors.fragranceBaseNotesError}
-                            placeholder={"base notes"}
-                            disabled={ispPerfumeLoading}
-                        /> */}
+                   
                         <Upload name={"file"} onChange={handleUpload} beforeUpload={() => false}>
                             <Button icon={<UploadOutlined />} style={{ marginTop: 22 }}>
                                 Качи снимка
@@ -160,7 +151,7 @@ const AddPerfume: FC = (): ReactElement => {
                         </Upload>
                     </Col>
                 </Row>
-                <IconButton title={"Запази"} icon={<PlusSquareFilled />} />
+                <IconButton title={"Добави продукта"} icon={<PlusSquareFilled />} />
             </Form>
         </>
     );

@@ -36,9 +36,9 @@ const NavBar: FC = (): ReactElement => {
                                     <li>Начало</li>
                                 </Link>
                                 <li>
-                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали</Link>
+                                    <Link to={{ pathname: MENU, state: { id: "all" } }}>Кристали, Минерали и Сувенири</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to={{ pathname: MENU_MINERALS, state: { id: "all" } }}> Минерали</Link>
                                 </li>
                                   <li>
@@ -52,7 +52,7 @@ const NavBar: FC = (): ReactElement => {
                                 </li>
                                   <li>
                                     <Link to={{ pathname: MENU_WITCHCRAFT, state: { id: "all" } }}> Вещерски неща</Link>
-                                </li>
+                                </li> */}
                                 <Link to={CONTACTS}>
                                     <li>Контакти</li>
                                 </Link>
