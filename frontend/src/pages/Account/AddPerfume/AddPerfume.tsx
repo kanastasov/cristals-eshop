@@ -29,6 +29,7 @@ type AddPerfumeData = {
     fragranceMiddleNotes: string;
     fragranceBaseNotes: string;
     price: string;
+    filename: string;
 };
 
 const AddPerfume: FC = (): ReactElement => {
@@ -66,14 +67,16 @@ const AddPerfume: FC = (): ReactElement => {
         data.type = ('Eau de Parfum');
         data.fragranceTopNotes = ('fragranceTopNotes');
         data.fragranceBaseNotes = ('fragranceBaseNotes');
-    
+        // data.filename = file[0].name;
                     
         const bodyFormData: FormData = new FormData();
         // @ts-ignore
         bodyFormData.append("file", { file });
         bodyFormData.append(
             "perfume",
-            new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
+            // new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
+                        new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
+
         );
         console.log(file)
         console.log(data)

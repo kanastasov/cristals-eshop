@@ -9,8 +9,9 @@ const Footer: FC = (): ReactElement => {
         <div className={"footer-wrapper"}>
             <Row >
                 <Col span={12}>
-                    <Typography.Title level={3}>Дени Кристали, Минерали и Сувенири</Typography.Title>
-                    <Typography.Text>(+359) 877393133</Typography.Text>
+                    <Typography.Title level={3}>Може да ни намерите на: Кв.Манастирски Ливади Ул.Казбек 57</Typography.Title>
+
+                    <Typography.Text>(+359) 897631393</Typography.Text>
                     <Typography.Text className={"mt-12"}>От 08:00 до 20:00 без Неделя.</Typography.Text>
                 </Col>
                 <Col span={12} >
@@ -29,7 +30,7 @@ const Footer: FC = (): ReactElement => {
                 </Col>
             </Row>
             <Row className={"footer-wrapper-copyright"}>
-                <Typography.Text>© Авторско право © 2025 Дени Кристъл</Typography.Text>
+                <Typography.Text>© Авторско право © 2025 MagicCrystals</Typography.Text>
             </Row>
         </div>
     );
