@@ -18,7 +18,17 @@ const Contacts: FC = (): ReactElement => {
                 <Col span={12}>
                     <div>
                         <Typography.Text strong>{"Мобилен номер: "}</Typography.Text>
-                        <Typography.Text>(+359) 877393133</Typography.Text>
+                        <Typography.Text>(+359) 897631393</Typography.Text>
+
+
+
+                      
+                    </div>
+                    <div>
+
+                          <Typography.Text strong>{"Адрес: "}</Typography.Text>
+                        <Typography.Text>Кв.Манастирски Ливади Ул.Казбек 57</Typography.Text>
+
                     </div>
                     <div>
                         <Typography.Text strong>{"E-mail: "}</Typography.Text>

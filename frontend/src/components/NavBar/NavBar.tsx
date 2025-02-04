@@ -10,7 +10,7 @@ import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
 import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU,MENU_MINERALS, MENU_ONYX, MENU_JEWELRY, MENU_SOUVENIR,MENU_WITCHCRAFT, REGISTRATION } from "../../constants/routeConstants";
 import { CART } from "../../constants/urlConstants";
 import "./NavBar.scss";
-import cristal from "../../img/Crystals1.jpg";
+import cristal from "../../img/Crystals1.png";
 
 const NavBar: FC = (): ReactElement => {
     const dispatch = useDispatch();
@@ -96,6 +96,12 @@ const NavBar: FC = (): ReactElement => {
                                             <li>
                                                 <UserAddOutlined />
                                                Регистрация
+                                            </li>
+                                        </Link>
+
+                                           <Link to={CONTACTS}>
+                                            <li>
+                                               Адрес: Кв.Манастирски Ливади Ул.Казбек 57
                                             </li>
                                         </Link>
                                     </>

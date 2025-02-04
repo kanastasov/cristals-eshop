@@ -43,8 +43,6 @@ public class AdminController {
                                                           @RequestPart("perfume") @Valid PerfumeRequest perfume,
                                                           BindingResult bindingResult) {
     	
-    	perfume.setType("Eau de Parfum");
-    	perfume.setPerfumeGender("male");
         return ResponseEntity.ok(perfumeMapper.savePerfume(perfume, file, bindingResult));
     }
 
