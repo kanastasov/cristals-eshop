@@ -11,11 +11,29 @@ type PropsType = {
     addToCart: () => void;
 };
 
+const PerfumeImage = ({ imageData, imageType }: { imageData: Uint8Array | undefined, imageType: string | undefined  }) => {
+
+    if (!imageData) {
+        return <span>No image available</span>; // Or any fallback content
+    }
+    const type = imageType || 'image/jpeg'; // Provide a fallback value for imageType
+
+
+
+    const imageBlob = new Blob([imageData], { type });
+    const imageUrl = URL.createObjectURL(imageBlob);
+
+    return <img src={imageUrl} alt="Perfume" />;
+};
+
 const ProductInfo: FC<PropsType> = ({ perfume, reviewsLength, addToCart }): ReactElement => {
+    console.log(perfume)
     return (
         <Row>
             <Col span={12} className={"product-image-wrapper"}>
-                <img src={perfume?.filename} alt={perfume?.perfumeTitle} className={"product-image"} />
+            <PerfumeImage imageData={perfume?.imageData} imageType={perfume?.imageType} />
+
+                {/* <img src={perfume?.filename} alt={perfume?.perfumeTitle} className={"product-image"} /> */}
             </Col>
             <Col span={12}>
                 <Row className={"product-header"}>

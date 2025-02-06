@@ -22,10 +22,7 @@ class RequestService {
 }
 
 const createRequest = (method: Method, url: string, body: any, isAuthRequired: boolean, contentType: string) => {
-       console.log(body)
 
-       console.log(isAuthRequired)
-          console.log(contentType)
     return axios({
         method: method,
         url: API_BASE_URL + url,

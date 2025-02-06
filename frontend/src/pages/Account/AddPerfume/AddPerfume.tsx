@@ -29,7 +29,7 @@ type AddPerfumeData = {
     fragranceMiddleNotes: string;
     fragranceBaseNotes: string;
     price: string;
-    filename: string;
+    // filename: string;
 };
 
 const AddPerfume: FC = (): ReactElement => {
@@ -37,11 +37,14 @@ const AddPerfume: FC = (): ReactElement => {
     const isPerfumeAdded = useSelector(selectIsPerfumeAdded);
     const ispPerfumeLoading = useSelector(selectIsAdminStateLoading);
     const perfumeErrors = useSelector(selectAdminStateErrors);
-    const [file, setFile] = React.useState<string>("");
 
     const [perfumeGender, setPerfumeGender] = React.useState<string>("male");
     const [type, setType] = React.useState<string>("Eau de Parfum");
 
+
+    // const [file, setFile] = React.useState<object>({});
+
+    const [file, setFile] = React.useState<File | null>(null);
 
     useEffect(() => {
         dispatch(setAdminLoadingState(LoadingStatus.LOADED));
@@ -67,26 +70,43 @@ const AddPerfume: FC = (): ReactElement => {
         data.type = ('Eau de Parfum');
         data.fragranceTopNotes = ('fragranceTopNotes');
         data.fragranceBaseNotes = ('fragranceBaseNotes');
-        // data.filename = file[0].name;
                     
         const bodyFormData: FormData = new FormData();
-        // @ts-ignore
-        bodyFormData.append("file", { file });
+        console.log(data)
+                console.log(file)
+
+
+           if (file) {
+            bodyFormData.append("file", file);
+        }
         bodyFormData.append(
             "perfume",
-            // new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
-                        new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
+            new Blob([JSON.stringify({ ...data, perfumeRating: 0 })], { type: "application/json" })
 
         );
-        console.log(file)
-        console.log(data)
 
         dispatch(addPerfume(bodyFormData));
     };
 
-    const handleUpload = ({ file }: UploadChangeParam<any>): void => {
-        setFile(file);
+    // const handleUpload = ({ file }: UploadChangeParam<any>): void => {
+    //                     console.log(file)
+
+    //     setFile(file);
+
+    // };
+
+  // ✅ Function to handle file selection
+    const handleUpload = (info: UploadChangeParam) => {
+    console.log("handleUpload being called");
+        // if (info.file.status !== "removed") {
+            setFile(info.file.originFileObj || null);
+        // }
     };
+
+//     const beforeUpload = (file) => {
+//         console.log("File selected:", file);
+//         return false; // Prevent automatic upload
+// };
 
     return (
         <>
@@ -147,7 +167,12 @@ const AddPerfume: FC = (): ReactElement => {
                             disabled={ispPerfumeLoading}
                         />
                    
-                        <Upload name={"file"} onChange={handleUpload} beforeUpload={() => false}>
+                      {/* ✅ File Upload Component */}
+                        <Upload
+                            name="file"
+                            beforeUpload={() => false} // Prevent automatic upload
+                            onChange={handleUpload}
+                        >
                             <Button icon={<UploadOutlined />} style={{ marginTop: 22 }}>
                                 Качи снимка
                             </Button>
