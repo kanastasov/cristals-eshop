@@ -31,6 +31,7 @@ export const fetchPerfumesByIds = createAsyncThunk<Array<PerfumeResponse>, Array
     "perfumes/fetchPerfumesByIds",
     async (ids) => {
         const response = await RequestService.post(PERFUMES_IDS, ids);
+        console.log(response.data);
         return response.data;
     }
 );
