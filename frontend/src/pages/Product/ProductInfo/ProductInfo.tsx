@@ -18,6 +18,7 @@ const PerfumeImage = ({ imageData, imageType }: { imageData: Uint8Array | undefi
     }
     const type = imageType || 'image/jpeg'; // Provide a fallback value for imageType
 
+    
 
 
     const imageBlob = new Blob([imageData], { type });

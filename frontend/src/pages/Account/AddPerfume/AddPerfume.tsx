@@ -99,6 +99,7 @@ const AddPerfume: FC = (): ReactElement => {
     const handleUpload = (info: UploadChangeParam) => {
     console.log("handleUpload being called");
         // if (info.file.status !== "removed") {
+        console.log(info.file.originFileObj)
             setFile(info.file.originFileObj || null);
         // }
     };
