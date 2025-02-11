@@ -20,6 +20,9 @@ export interface RootState {
     perfume: PerfumeState;
     perfumes: PerfumesState;
     user: UserState;
+    imageData: Uint8Array;
+    imageName: string;
+    imageType: string;
     crystal: CrystalState;
     crystals: CrystalsState;
 }
