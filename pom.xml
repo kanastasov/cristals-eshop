@@ -8,10 +8,10 @@
 		<version>2.3.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gmail.merikbest2015</groupId>
+	<groupId>com.kirilanastasoff.magiccrystals</groupId>
 	<artifactId>ecommerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ecommerce</name>
+	<name>magiccrystalseshop</name>
 	<description>Ecommerce</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -223,6 +223,31 @@
 					<target>8</target>
 				</configuration>
 			</plugin>
+			
+					
+			 <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <target>
+                            <tar destfile="${project.build.directory}/${project.artifactId}.tar">
+                                <fileset dir="${project.build.directory}">
+                                    <include name="*.jar"/>
+                                </fileset>
+                            </tar>
+                        </target>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+			
 		</plugins>
 	</build>
 </project>
